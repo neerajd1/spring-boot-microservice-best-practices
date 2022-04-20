@@ -1,0 +1,3412 @@
+
+
+       _               _              
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V / 
+  \___|_| |_|\___|\___|_|\_\___/ \_/  
+                                      
+By bridgecrew.io | version: 2.0.660 
+Update available 2.0.660 -> 2.0.745
+Run pip3 install -U checkov to update 
+
+
+cloudformation scan results:
+
+Passed checks: 0, Failed checks: 0, Skipped checks: 0, Parsing errors: 7
+
+Error parsing file ./cloudbuild.yaml
+Error parsing file ./kubernetes/helm-chart/templates/deployment.yaml
+Error parsing file ./kubernetes/helm-chart/templates/ingress.yaml
+Error parsing file ./kubernetes/helm-chart/templates/service.yaml
+Error parsing file ./kubernetes/helm-chart/templates/hpa.yaml
+Error parsing file ./kubernetes/helm-chart/templates/serviceaccount.yaml
+Error parsing file ./kubernetes/helm-chart/templates/tests/test-connection.yaml
+kubernetes scan results:
+
+Passed checks: 74, Failed checks: 21, Skipped checks: 0
+
+Check: CKV_K8S_80: "Ensure that the admission control plugin AlwaysPullImages is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwayspullimages-is-set
+
+Check: CKV_K8S_113: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001
+
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_32
+
+Check: CKV_K8S_33: "Ensure the Kubernetes dashboard is not deployed"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_31
+
+Check: CKV_K8S_104: "Ensure that encryption providers are appropriately configured"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate
+
+Check: CKV_K8S_77: "Ensure that the --authorization-mode argument includes RBAC"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-rbac
+
+Check: CKV_K8S_112: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotatekubeletservercertificate-argument-is-set-to-true-for-controller-manager
+
+Check: CKV_K8S_82: "Ensure that the admission control plugin ServiceAccount is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-serviceaccount-is-set
+
+Check: CKV_K8S_74: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow-1
+
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_25
+
+Check: CKV_K8S_97: "Ensure that the --service-account-key-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_114: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-1
+
+Check: CKV_K8S_108: "Ensure that the --use-service-account-credentials argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-use-service-account-credentials-argument-is-set-to-true
+
+Check: CKV_K8S_146: "Ensure that the --hostname-override argument is not set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-hostname-override-argument-is-not-set
+
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_14
+
+Check: CKV_K8S_148: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate-for-kubelet
+
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_26
+
+Check: CKV_K8S_89: "Ensure that the --secure-port argument is not set to 0"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-secure-port-argument-is-not-set-to-0
+
+Check: CKV_K8S_70: "Ensure that the --token-auth-file argument is not set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-token-auth-file-parameter-is-not-set
+
+Check: CKV_K8S_68: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false-1
+
+Check: CKV_K8S_151: "Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_141: "Ensure that the --read-only-port argument is set to 0"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-read-only-port-argument-is-set-to-0
+
+Check: CKV_K8S_119: "Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-peer-cert-file-and-peer-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_150: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+
+Check: CKV_K8S_106: "Ensure that the --terminated-pod-gc-threshold argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-terminated-pod-gc-threshold-argument-is-set-as-appropriate
+
+Check: CKV_K8S_143: "Ensure that the --streaming-connection-idle-timeout argument is not set to 0"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-streaming-connection-idle-timeout-argument-is-not-set-to-0
+
+Check: CKV_K8S_79: "Ensure that the admission control plugin AlwaysAdmit is not set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwaysadmit-is-not-set
+
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_36
+
+Check: CKV_K8S_115: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001-1
+
+Check: CKV_K8S_16: "Container should not be privileged"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_15
+
+Check: CKV_K8S_45: "Ensure the Tiller Deployment (Helm V2) is not accessible from within the cluster"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_40
+
+Check: CKV_K8S_88: "Ensure that the --insecure-port argument is set to 0"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-port-argument-is-set-to-0
+
+Check: CKV_K8S_111: "Ensure that the --root-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-root-ca-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_19: "Containers should not share the host network namespace"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_18
+
+Check: CKV_K8S_84: "Ensure that the admission control plugin PodSecurityPolicy is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-podsecuritypolicy-is-set
+
+Check: CKV_K8S_116: "Ensure that the --cert-file and --key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-cert-file-and-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_91: "Ensure that the --audit-log-path argument is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-path-argument-is-set
+
+Check: CKV_K8S_95: "Ensure that the --request-timeout argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-request-timeout-argument-is-set-as-appropriate
+
+Check: CKV_K8S_93: "Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxbackup-argument-is-set-to-10-or-as-appropriate
+
+Check: CKV_K8S_145: "Ensure that the --make-iptables-util-chains argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-make-iptables-util-chains-argument-is-set-to-true
+
+Check: CKV_K8S_110: "Ensure that the --service-account-private-key-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-private-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_105: "Ensure that the API Server only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-api-server-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_144: "Ensure that the --protect-kernel-defaults argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-protect-kernel-defaults-argument-is-set-to-true
+
+Check: CKV_K8S_69: "Ensure that the --basic-auth-file argument is not set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-basic-auth-file-argument-is-not-set
+
+Check: CKV_K8S_100: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_72: "Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-client-certificate-and-kubelet-client-key-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_33
+
+Check: CKV_K8S_75: "Ensure that the --authorization-mode argument includes Node"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-node
+
+Check: CKV_K8S_17: "Containers should not share the host process ID namespace"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_16
+
+Check: CKV_K8S_18: "Containers should not share the host IPC namespace"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_17
+
+Check: CKV_K8S_138: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false
+
+Check: CKV_K8S_117: "Ensure that the --client-cert-auth argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-cert-auth-argument-is-set-to-true
+
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_24
+
+Check: CKV_K8S_81: "Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-securitycontextdeny-is-set-if-podsecuritypolicy-is-not-used
+
+Check: CKV_K8S_102: "Ensure that the --etcd-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate-1
+
+Check: CKV_K8S_73: "Ensure that the --kubelet-certificate-authority argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-certificate-authority-argument-is-set-as-appropriate
+
+Check: CKV_K8S_86: "Ensure that the --insecure-bind-address argument is not set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-bind-address-argument-is-not-set
+
+Check: CKV_K8S_85: "Ensure that the admission control plugin NodeRestriction is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-noderestriction-is-set
+
+Check: CKV_K8S_99: "Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-certfile-and-etcd-keyfile-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_90: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-2
+
+Check: CKV_K8S_92: "Ensure that the --audit-log-maxage argument is set to 30 or as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxage-argument-is-set-to-30-or-as-appropriate
+
+Check: CKV_K8S_71: "Ensure that the --kubelet-https argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-https-argument-is-set-to-true
+
+Check: CKV_K8S_147: "Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-event-qps-argument-is-set-to-0-or-a-level-which-ensures-appropriate-event-capture
+
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_13
+
+Check: CKV_K8S_94: "Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxsize-argument-is-set-to-100-or-as-appropriate
+
+Check: CKV_K8S_107: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false
+
+Check: CKV_K8S_139: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow
+
+Check: CKV_K8S_149: "Ensure that the --rotate-certificates argument is not set to false"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotate-certificates-argument-is-not-set-to-false
+
+Check: CKV_K8S_118: "Ensure that the --auto-tls argument is not set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-auto-tls-argument-is-not-set-to-true
+
+Check: CKV_K8S_140: "Ensure that the --client-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-ca-file-argument-is-set-as-appropriate-scored
+
+Check: CKV_K8S_83: "Ensure that the admission control plugin NamespaceLifecycle is set"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-namespacelifecycle-is-set
+
+Check: CKV_K8S_96: "Ensure that the --service-account-lookup argument is set to true"
+	PASSED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-lookup-argument-is-set-to-true
+
+Check: CKV_K8S_152: "Prevent NGINX Ingress annotation snippets which contain LUA code execution. See CVE-2021-25742"
+	PASSED for resource: Ingress.default.companies-house-microservice
+	File: /kubernetes/std/ingress.yaml:1-19
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_108
+
+Check: CKV_K8S_154: "Prevent NGINX Ingress annotation snippets which contain alias statements See CVE-2021-25742"
+	PASSED for resource: Ingress.default.companies-house-microservice
+	File: /kubernetes/std/ingress.yaml:1-19
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_110
+
+Check: CKV_K8S_37: "Minimize the admission of containers with capabilities assigned"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_34
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_31: "Ensure that the seccomp profile is set to docker/default or runtime/default"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_29
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_7
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_12: "Memory requests should be set"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_11
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_19
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_13: "Memory limits should be set"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_12
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_40: "Containers should run as a high UID to avoid host conflict"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_37
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_10: "CPU requests should be set"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_9
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_8
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_27
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_29: "Apply security context to your pods and containers"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_38: "Ensure that Service Account Tokens are only mounted where necessary"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_35
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_23: "Minimize the admission of root containers"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_22
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_39
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_11: "CPU limits should be set"
+	FAILED for resource: Deployment.default.companies-house-microservice
+	File: /kubernetes/std/deployment.yaml:1-23
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_10
+
+		1  | apiVersion: apps/v1
+		2  | kind: Deployment
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   replicas: 1
+		7  |   selector:
+		8  |     matchLabels:
+		9  |       app: companies-house-microservice
+		10 |   template:
+		11 |     metadata:
+		12 |       labels:
+		13 |         app: companies-house-microservice
+		14 |     spec:
+		15 |       containers:
+		16 |         - name: companies-house-microservice
+		17 |           image: abhisheksr01/companies-house-microservice:0.0.1
+		18 |           ports:
+		19 |             - containerPort: 8080
+		20 |           imagePullPolicy: Always
+		21 |           env:
+		22 |             - name: "govCompaniesHouse.authUserName"
+		23 |               value: "dummy-user"
+
+Check: CKV_K8S_153: "Prevent All NGINX Ingress annotation snippets. See CVE-2021-25742"
+	FAILED for resource: Ingress.default.companies-house-microservice
+	File: /kubernetes/std/ingress.yaml:1-19
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_109
+
+		1  | apiVersion: extensions/v1beta1
+		2  | kind: Ingress
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  |   annotations:
+		6  |     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+		7  |     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+		8  |     nginx.ingress.kubernetes.io/rewrite-target: /
+		9  |     nginx.ingress.kubernetes.io/configuration-snippet: |
+		10 |       more_set_headers "Server: api";
+		11 |       more_set_headers "X-Content-Type-Options: nosniff";
+		12 | spec:
+		13 |   rules:
+		14 |     - host: companieshouse.labs.armakuni.co.uk
+		15 |       http:
+		16 |         paths:
+		17 |           - backend:
+		18 |               serviceName: companies-house-microservice
+		19 |               servicePort: 80
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Ingress.default.companies-house-microservice
+	File: /kubernetes/std/ingress.yaml:1-19
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		1  | apiVersion: extensions/v1beta1
+		2  | kind: Ingress
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  |   annotations:
+		6  |     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+		7  |     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+		8  |     nginx.ingress.kubernetes.io/rewrite-target: /
+		9  |     nginx.ingress.kubernetes.io/configuration-snippet: |
+		10 |       more_set_headers "Server: api";
+		11 |       more_set_headers "X-Content-Type-Options: nosniff";
+		12 | spec:
+		13 |   rules:
+		14 |     - host: companieshouse.labs.armakuni.co.uk
+		15 |       http:
+		16 |         paths:
+		17 |           - backend:
+		18 |               serviceName: companies-house-microservice
+		19 |               servicePort: 80
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Service.default.companies-house-microservice
+	File: /kubernetes/std/service.yaml:1-11
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		1  | apiVersion: v1
+		2  | kind: Service
+		3  | metadata:
+		4  |   name: companies-house-microservice
+		5  | spec:
+		6  |   selector:
+		7  |     app: companies-house-microservice
+		8  |   ports:
+		9  |     - port: 80
+		10 |       targetPort: 8080
+		11 |   type: NodePort
+
+helm scan results:
+
+Passed checks: 147, Failed checks: 38, Skipped checks: 0
+
+Check: CKV_K8S_80: "Ensure that the admission control plugin AlwaysPullImages is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwayspullimages-is-set
+
+Check: CKV_K8S_113: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001
+
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_32
+
+Check: CKV_K8S_33: "Ensure the Kubernetes dashboard is not deployed"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_31
+
+Check: CKV_K8S_104: "Ensure that encryption providers are appropriately configured"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate
+
+Check: CKV_K8S_77: "Ensure that the --authorization-mode argument includes RBAC"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-rbac
+
+Check: CKV_K8S_112: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotatekubeletservercertificate-argument-is-set-to-true-for-controller-manager
+
+Check: CKV_K8S_82: "Ensure that the admission control plugin ServiceAccount is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-serviceaccount-is-set
+
+Check: CKV_K8S_74: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow-1
+
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_25
+
+Check: CKV_K8S_97: "Ensure that the --service-account-key-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_114: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-1
+
+Check: CKV_K8S_108: "Ensure that the --use-service-account-credentials argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-use-service-account-credentials-argument-is-set-to-true
+
+Check: CKV_K8S_146: "Ensure that the --hostname-override argument is not set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-hostname-override-argument-is-not-set
+
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_14
+
+Check: CKV_K8S_148: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate-for-kubelet
+
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_26
+
+Check: CKV_K8S_89: "Ensure that the --secure-port argument is not set to 0"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-secure-port-argument-is-not-set-to-0
+
+Check: CKV_K8S_70: "Ensure that the --token-auth-file argument is not set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-token-auth-file-parameter-is-not-set
+
+Check: CKV_K8S_68: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false-1
+
+Check: CKV_K8S_151: "Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_141: "Ensure that the --read-only-port argument is set to 0"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-read-only-port-argument-is-set-to-0
+
+Check: CKV_K8S_119: "Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-peer-cert-file-and-peer-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_150: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+
+Check: CKV_K8S_106: "Ensure that the --terminated-pod-gc-threshold argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-terminated-pod-gc-threshold-argument-is-set-as-appropriate
+
+Check: CKV_K8S_143: "Ensure that the --streaming-connection-idle-timeout argument is not set to 0"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-streaming-connection-idle-timeout-argument-is-not-set-to-0
+
+Check: CKV_K8S_79: "Ensure that the admission control plugin AlwaysAdmit is not set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwaysadmit-is-not-set
+
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_36
+
+Check: CKV_K8S_115: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001-1
+
+Check: CKV_K8S_16: "Container should not be privileged"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_15
+
+Check: CKV_K8S_45: "Ensure the Tiller Deployment (Helm V2) is not accessible from within the cluster"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_40
+
+Check: CKV_K8S_88: "Ensure that the --insecure-port argument is set to 0"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-port-argument-is-set-to-0
+
+Check: CKV_K8S_111: "Ensure that the --root-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-root-ca-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_19: "Containers should not share the host network namespace"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_18
+
+Check: CKV_K8S_84: "Ensure that the admission control plugin PodSecurityPolicy is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-podsecuritypolicy-is-set
+
+Check: CKV_K8S_116: "Ensure that the --cert-file and --key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-cert-file-and-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_91: "Ensure that the --audit-log-path argument is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-path-argument-is-set
+
+Check: CKV_K8S_95: "Ensure that the --request-timeout argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-request-timeout-argument-is-set-as-appropriate
+
+Check: CKV_K8S_93: "Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxbackup-argument-is-set-to-10-or-as-appropriate
+
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_8
+
+Check: CKV_K8S_145: "Ensure that the --make-iptables-util-chains argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-make-iptables-util-chains-argument-is-set-to-true
+
+Check: CKV_K8S_110: "Ensure that the --service-account-private-key-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-private-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_105: "Ensure that the API Server only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-api-server-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_144: "Ensure that the --protect-kernel-defaults argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-protect-kernel-defaults-argument-is-set-to-true
+
+Check: CKV_K8S_69: "Ensure that the --basic-auth-file argument is not set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-basic-auth-file-argument-is-not-set
+
+Check: CKV_K8S_100: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_72: "Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-client-certificate-and-kubelet-client-key-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_33
+
+Check: CKV_K8S_75: "Ensure that the --authorization-mode argument includes Node"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-node
+
+Check: CKV_K8S_17: "Containers should not share the host process ID namespace"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_16
+
+Check: CKV_K8S_18: "Containers should not share the host IPC namespace"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_17
+
+Check: CKV_K8S_138: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false
+
+Check: CKV_K8S_117: "Ensure that the --client-cert-auth argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-cert-auth-argument-is-set-to-true
+
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_24
+
+Check: CKV_K8S_81: "Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-securitycontextdeny-is-set-if-podsecuritypolicy-is-not-used
+
+Check: CKV_K8S_102: "Ensure that the --etcd-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate-1
+
+Check: CKV_K8S_73: "Ensure that the --kubelet-certificate-authority argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-certificate-authority-argument-is-set-as-appropriate
+
+Check: CKV_K8S_86: "Ensure that the --insecure-bind-address argument is not set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-bind-address-argument-is-not-set
+
+Check: CKV_K8S_85: "Ensure that the admission control plugin NodeRestriction is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-noderestriction-is-set
+
+Check: CKV_K8S_99: "Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-certfile-and-etcd-keyfile-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_29: "Apply security context to your pods and containers"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+Check: CKV_K8S_90: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-2
+
+Check: CKV_K8S_92: "Ensure that the --audit-log-maxage argument is set to 30 or as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxage-argument-is-set-to-30-or-as-appropriate
+
+Check: CKV_K8S_71: "Ensure that the --kubelet-https argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-https-argument-is-set-to-true
+
+Check: CKV_K8S_147: "Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-event-qps-argument-is-set-to-0-or-a-level-which-ensures-appropriate-event-capture
+
+Check: CKV_K8S_94: "Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxsize-argument-is-set-to-100-or-as-appropriate
+
+Check: CKV_K8S_107: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false
+
+Check: CKV_K8S_139: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow
+
+Check: CKV_K8S_149: "Ensure that the --rotate-certificates argument is not set to false"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotate-certificates-argument-is-not-set-to-false
+
+Check: CKV_K8S_118: "Ensure that the --auto-tls argument is not set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-auto-tls-argument-is-not-set-to-true
+
+Check: CKV_K8S_140: "Ensure that the --client-ca-file argument is set as appropriate"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-ca-file-argument-is-set-as-appropriate-scored
+
+Check: CKV_K8S_83: "Ensure that the admission control plugin NamespaceLifecycle is set"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-namespacelifecycle-is-set
+
+Check: CKV_K8S_96: "Ensure that the --service-account-lookup argument is set to true"
+	PASSED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-lookup-argument-is-set-to-true
+
+Check: CKV_K8S_152: "Prevent NGINX Ingress annotation snippets which contain LUA code execution. See CVE-2021-25742"
+	PASSED for resource: Ingress.default.companieshouse
+	File: /k8s-helm/templates/ingress.yaml:3-26
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_108
+
+Check: CKV_K8S_154: "Prevent NGINX Ingress annotation snippets which contain alias statements See CVE-2021-25742"
+	PASSED for resource: Ingress.default.companieshouse
+	File: /k8s-helm/templates/ingress.yaml:3-26
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_110
+
+Check: CKV_K8S_80: "Ensure that the admission control plugin AlwaysPullImages is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwayspullimages-is-set
+
+Check: CKV_K8S_113: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001
+
+Check: CKV_K8S_34: "Ensure that Tiller (Helm v2) is not deployed"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_32
+
+Check: CKV_K8S_33: "Ensure the Kubernetes dashboard is not deployed"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_31
+
+Check: CKV_K8S_104: "Ensure that encryption providers are appropriately configured"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate
+
+Check: CKV_K8S_77: "Ensure that the --authorization-mode argument includes RBAC"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-rbac
+
+Check: CKV_K8S_112: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotatekubeletservercertificate-argument-is-set-to-true-for-controller-manager
+
+Check: CKV_K8S_82: "Ensure that the admission control plugin ServiceAccount is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-serviceaccount-is-set
+
+Check: CKV_K8S_74: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow-1
+
+Check: CKV_K8S_26: "Do not specify hostPort unless absolutely necessary"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_25
+
+Check: CKV_K8S_97: "Ensure that the --service-account-key-file argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_114: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-1
+
+Check: CKV_K8S_108: "Ensure that the --use-service-account-credentials argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-use-service-account-credentials-argument-is-set-to-true
+
+Check: CKV_K8S_146: "Ensure that the --hostname-override argument is not set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-hostname-override-argument-is-not-set
+
+Check: CKV_K8S_15: "Image Pull Policy should be Always"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_14
+
+Check: CKV_K8S_148: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate-for-kubelet
+
+Check: CKV_K8S_27: "Do not expose the docker daemon socket to containers"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_26
+
+Check: CKV_K8S_89: "Ensure that the --secure-port argument is not set to 0"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-secure-port-argument-is-not-set-to-0
+
+Check: CKV_K8S_70: "Ensure that the --token-auth-file argument is not set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-token-auth-file-parameter-is-not-set
+
+Check: CKV_K8S_68: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false-1
+
+Check: CKV_K8S_151: "Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_141: "Ensure that the --read-only-port argument is set to 0"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-read-only-port-argument-is-set-to-0
+
+Check: CKV_K8S_119: "Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-peer-cert-file-and-peer-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_150: "Ensure that the RotateKubeletServerCertificate argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+
+Check: CKV_K8S_106: "Ensure that the --terminated-pod-gc-threshold argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-terminated-pod-gc-threshold-argument-is-set-as-appropriate
+
+Check: CKV_K8S_143: "Ensure that the --streaming-connection-idle-timeout argument is not set to 0"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-streaming-connection-idle-timeout-argument-is-not-set-to-0
+
+Check: CKV_K8S_79: "Ensure that the admission control plugin AlwaysAdmit is not set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-alwaysadmit-is-not-set
+
+Check: CKV_K8S_39: "Do not use the CAP_SYS_ADMIN linux capability"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_36
+
+Check: CKV_K8S_115: "Ensure that the --bind-address argument is set to 127.0.0.1"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-bind-address-argument-is-set-to-127001-1
+
+Check: CKV_K8S_16: "Container should not be privileged"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_15
+
+Check: CKV_K8S_45: "Ensure the Tiller Deployment (Helm V2) is not accessible from within the cluster"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_40
+
+Check: CKV_K8S_88: "Ensure that the --insecure-port argument is set to 0"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-port-argument-is-set-to-0
+
+Check: CKV_K8S_111: "Ensure that the --root-ca-file argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-root-ca-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_19: "Containers should not share the host network namespace"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_18
+
+Check: CKV_K8S_84: "Ensure that the admission control plugin PodSecurityPolicy is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-podsecuritypolicy-is-set
+
+Check: CKV_K8S_116: "Ensure that the --cert-file and --key-file arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-cert-file-and-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_91: "Ensure that the --audit-log-path argument is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-path-argument-is-set
+
+Check: CKV_K8S_95: "Ensure that the --request-timeout argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-request-timeout-argument-is-set-as-appropriate
+
+Check: CKV_K8S_93: "Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxbackup-argument-is-set-to-10-or-as-appropriate
+
+Check: CKV_K8S_145: "Ensure that the --make-iptables-util-chains argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-make-iptables-util-chains-argument-is-set-to-true
+
+Check: CKV_K8S_110: "Ensure that the --service-account-private-key-file argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-private-key-file-argument-is-set-as-appropriate
+
+Check: CKV_K8S_105: "Ensure that the API Server only makes use of Strong Cryptographic Ciphers"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-api-server-only-makes-use-of-strong-cryptographic-ciphers
+
+Check: CKV_K8S_144: "Ensure that the --protect-kernel-defaults argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-protect-kernel-defaults-argument-is-set-to-true
+
+Check: CKV_K8S_69: "Ensure that the --basic-auth-file argument is not set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-basic-auth-file-argument-is-not-set
+
+Check: CKV_K8S_100: "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-tls-cert-file-and-tls-private-key-file-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_72: "Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-client-certificate-and-kubelet-client-key-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_35: "Prefer using secrets as files over secrets as environment variables"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_33
+
+Check: CKV_K8S_75: "Ensure that the --authorization-mode argument includes Node"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-includes-node
+
+Check: CKV_K8S_17: "Containers should not share the host process ID namespace"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_16
+
+Check: CKV_K8S_18: "Containers should not share the host IPC namespace"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_17
+
+Check: CKV_K8S_138: "Ensure that the --anonymous-auth argument is set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-anonymous-auth-argument-is-set-to-false
+
+Check: CKV_K8S_117: "Ensure that the --client-cert-auth argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-cert-auth-argument-is-set-to-true
+
+Check: CKV_K8S_25: "Minimize the admission of containers with added capability"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_24
+
+Check: CKV_K8S_81: "Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-securitycontextdeny-is-set-if-podsecuritypolicy-is-not-used
+
+Check: CKV_K8S_102: "Ensure that the --etcd-ca-file argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-cafile-argument-is-set-as-appropriate-1
+
+Check: CKV_K8S_73: "Ensure that the --kubelet-certificate-authority argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-certificate-authority-argument-is-set-as-appropriate
+
+Check: CKV_K8S_86: "Ensure that the --insecure-bind-address argument is not set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-insecure-bind-address-argument-is-not-set
+
+Check: CKV_K8S_85: "Ensure that the admission control plugin NodeRestriction is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-noderestriction-is-set
+
+Check: CKV_K8S_99: "Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-etcd-certfile-and-etcd-keyfile-arguments-are-set-as-appropriate
+
+Check: CKV_K8S_90: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false-2
+
+Check: CKV_K8S_92: "Ensure that the --audit-log-maxage argument is set to 30 or as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxage-argument-is-set-to-30-or-as-appropriate
+
+Check: CKV_K8S_71: "Ensure that the --kubelet-https argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-kubelet-https-argument-is-set-to-true
+
+Check: CKV_K8S_147: "Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-event-qps-argument-is-set-to-0-or-a-level-which-ensures-appropriate-event-capture
+
+Check: CKV_K8S_94: "Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-audit-log-maxsize-argument-is-set-to-100-or-as-appropriate
+
+Check: CKV_K8S_107: "Ensure that the --profiling argument is set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-profiling-argument-is-set-to-false
+
+Check: CKV_K8S_139: "Ensure that the --authorization-mode argument is not set to AlwaysAllow"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-authorization-mode-argument-is-not-set-to-alwaysallow
+
+Check: CKV_K8S_149: "Ensure that the --rotate-certificates argument is not set to false"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-rotate-certificates-argument-is-not-set-to-false
+
+Check: CKV_K8S_118: "Ensure that the --auto-tls argument is not set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-auto-tls-argument-is-not-set-to-true
+
+Check: CKV_K8S_140: "Ensure that the --client-ca-file argument is set as appropriate"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-client-ca-file-argument-is-set-as-appropriate-scored
+
+Check: CKV_K8S_83: "Ensure that the admission control plugin NamespaceLifecycle is set"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-admission-control-plugin-namespacelifecycle-is-set
+
+Check: CKV_K8S_96: "Ensure that the --service-account-lookup argument is set to true"
+	PASSED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-the-service-account-lookup-argument-is-set-to-true
+
+Check: CKV_K8S_37: "Minimize the admission of containers with capabilities assigned"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_34
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_31: "Ensure that the seccomp profile is set to docker/default or runtime/default"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_29
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_7
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_12: "Memory requests should be set"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_11
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_19
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_13: "Memory limits should be set"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_12
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_40: "Containers should run as a high UID to avoid host conflict"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_37
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_10: "CPU requests should be set"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_9
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_27
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_13
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_38: "Ensure that Service Account Tokens are only mounted where necessary"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_35
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_23: "Minimize the admission of root containers"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_22
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_39
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_11: "CPU limits should be set"
+	FAILED for resource: Deployment.default.companieshouse
+	File: /k8s-helm/templates/deployment.yaml:3-55
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_10
+
+		3  | apiVersion: apps/v1
+		4  | kind: Deployment
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   replicas: 1
+		15 |   selector:
+		16 |     matchLabels:
+		17 |       app.kubernetes.io/name: k8s-helm
+		18 |       app.kubernetes.io/instance: RELEASE-NAME
+		19 |   template:
+		20 |     metadata:
+		21 |       labels:
+		22 |         date: "1642970991"
+		23 |         app.kubernetes.io/name: k8s-helm
+		24 |         app.kubernetes.io/instance: RELEASE-NAME
+		25 |     spec:
+		26 |       serviceAccountName: default
+		27 |       securityContext:
+		28 |         {}
+		29 |       containers:
+		30 |         - name: k8s-helm
+		31 |           securityContext:
+		32 |             {}
+		33 |           image: "abhisheksr01/companieshouse:latest"
+		34 |           imagePullPolicy: Always
+		35 |           env:
+		36 |             - name: "govCompaniesHouse.authUserName"
+		37 |               value:
+		38 |           ports:
+		39 |             - name: http
+		40 |               containerPort: 8080
+		41 |               protocol: TCP
+		42 | #          livenessProbe:
+		43 | #            httpGet:
+		44 | #              path: /companieshouse/actuator/health
+		45 | #              port: 8080
+		46 | #            initialDelaySeconds: 10
+		47 | #            periodSeconds: 10
+		48 |           readinessProbe:
+		49 |             httpGet:
+		50 |               path: /companieshouse/actuator/health
+		51 |               port: 8080
+		52 |             initialDelaySeconds: 10
+		53 |             periodSeconds: 10
+		54 |           resources:
+		55 |             {}
+
+
+Check: CKV_K8S_153: "Prevent All NGINX Ingress annotation snippets. See CVE-2021-25742"
+	FAILED for resource: Ingress.default.companieshouse
+	File: /k8s-helm/templates/ingress.yaml:3-26
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_109
+
+		3  | apiVersion: networking.k8s.io/v1beta1
+		4  | kind: Ingress
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     nginx.ingress.kubernetes.io/configuration-snippet: 'more_set_headers "Server: api";
+		15 |       more_set_headers "X-Content-Type-Options: nosniff";'
+		16 |     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+		17 |     nginx.ingress.kubernetes.io/rewrite-target: /
+		18 |     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+		19 | spec:
+		20 |   rules:
+		21 |     - host: "companieshouse.labs.armakuni.co.uk"
+		22 |       http:
+		23 |         paths:
+		24 |           - backend:
+		25 |               serviceName: companieshouse
+		26 |               servicePort: 80
+
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Ingress.default.companieshouse
+	File: /k8s-helm/templates/ingress.yaml:3-26
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		3  | apiVersion: networking.k8s.io/v1beta1
+		4  | kind: Ingress
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     nginx.ingress.kubernetes.io/configuration-snippet: 'more_set_headers "Server: api";
+		15 |       more_set_headers "X-Content-Type-Options: nosniff";'
+		16 |     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+		17 |     nginx.ingress.kubernetes.io/rewrite-target: /
+		18 |     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+		19 | spec:
+		20 |   rules:
+		21 |     - host: "companieshouse.labs.armakuni.co.uk"
+		22 |       http:
+		23 |         paths:
+		24 |           - backend:
+		25 |               serviceName: companieshouse
+		26 |               servicePort: 80
+
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Service.default.companieshouse
+	File: /k8s-helm/templates/service.yaml:3-22
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		3  | apiVersion: v1
+		4  | kind: Service
+		5  | metadata:
+		6  |   name: companieshouse
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 | spec:
+		14 |   type: NodePort
+		15 |   ports:
+		16 |     - port: 80
+		17 |       targetPort: 8080
+		18 |       protocol: TCP
+		19 |       name: http
+		20 |   selector:
+		21 |     app.kubernetes.io/name: k8s-helm
+		22 |     app.kubernetes.io/instance: RELEASE-NAME
+
+
+Check: CKV_K8S_37: "Minimize the admission of containers with capabilities assigned"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_34
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_31: "Ensure that the seccomp profile is set to docker/default or runtime/default"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_29
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_8: "Liveness Probe Should be Configured"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_7
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_12: "Memory requests should be set"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_11
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_20: "Containers should not run with allowPrivilegeEscalation"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_19
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_13: "Memory limits should be set"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_12
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_40: "Containers should run as a high UID to avoid host conflict"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_37
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_10: "CPU requests should be set"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_9
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_22: "Use read-only filesystem for containers where possible"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_9: "Readiness Probe Should be Configured"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_8
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_28: "Minimize the admission of containers with the NET_RAW capability"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_27
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_29: "Apply security context to your pods and containers"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_30: "Apply security context to your pods and containers"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_28
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_14: "Image Tag should be fixed - not latest or blank"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_13
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_38: "Ensure that Service Account Tokens are only mounted where necessary"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_35
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_21: "The default namespace should not be used"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_20
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_23: "Minimize the admission of root containers"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_22
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_43: "Image should use digest"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_39
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+Check: CKV_K8S_11: "CPU limits should be set"
+	FAILED for resource: Pod.default.companieshouse-test-connection
+	File: /k8s-helm/templates/tests/test-connection.yaml:3-21
+	Guide: https://docs.bridgecrew.io/docs/bc_k8s_10
+
+		3  | apiVersion: v1
+		4  | kind: Pod
+		5  | metadata:
+		6  |   name: "companieshouse-test-connection"
+		7  |   labels:
+		8  |     helm.sh/chart: k8s-helm-0.1.0
+		9  |     app.kubernetes.io/name: k8s-helm
+		10 |     app.kubernetes.io/instance: RELEASE-NAME
+		11 |     app.kubernetes.io/version: "1.16.0"
+		12 |     app.kubernetes.io/managed-by: Helm
+		13 |   annotations:
+		14 |     "helm.sh/hook": test-success
+		15 | spec:
+		16 |   containers:
+		17 |     - name: wget
+		18 |       image: busybox
+		19 |       command: ['wget']
+		20 |       args: ['companieshouse:80']
+		21 |   restartPolicy: Never
+
+
+dockerfile scan results:
+
+Passed checks: 15, Failed checks: 3, Skipped checks: 0
+
+Check: CKV_DOCKER_5: "Ensure update instructions are not use alone in the Dockerfile"
+	PASSED for resource: /Dockerfile.
+	File: /Dockerfile:1-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-update-instructions-are-not-used-alone-in-the-dockerfile
+
+Check: CKV_DOCKER_7: "Ensure the base image uses a non latest version tag"
+	PASSED for resource: /Dockerfile.
+	File: /Dockerfile:1-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-base-image-uses-a-non-latest-version-tag
+
+Check: CKV_DOCKER_8: "Ensure the last USER is not root"
+	PASSED for resource: /Dockerfile.USER
+	File: /Dockerfile:15-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-last-user-is-not-root
+
+Check: CKV_DOCKER_1: "Ensure port 22 is not exposed"
+	PASSED for resource: /Dockerfile.
+	File: /Dockerfile:1-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-port-22-is-not-exposed
+
+Check: CKV_DOCKER_3: "Ensure that a user for the container has been created"
+	PASSED for resource: /Dockerfile.USER
+	File: /Dockerfile:15-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-a-user-for-the-container-has-been-created
+
+Check: CKV_DOCKER_5: "Ensure update instructions are not use alone in the Dockerfile"
+	PASSED for resource: /ci.Dockerfile.
+	File: /ci.Dockerfile:1-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-update-instructions-are-not-used-alone-in-the-dockerfile
+
+Check: CKV_DOCKER_7: "Ensure the base image uses a non latest version tag"
+	PASSED for resource: /ci.Dockerfile.
+	File: /ci.Dockerfile:1-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-base-image-uses-a-non-latest-version-tag
+
+Check: CKV_DOCKER_8: "Ensure the last USER is not root"
+	PASSED for resource: /ci.Dockerfile.USER
+	File: /ci.Dockerfile:17-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-last-user-is-not-root
+
+Check: CKV_DOCKER_1: "Ensure port 22 is not exposed"
+	PASSED for resource: /ci.Dockerfile.
+	File: /ci.Dockerfile:1-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-port-22-is-not-exposed
+
+Check: CKV_DOCKER_3: "Ensure that a user for the container has been created"
+	PASSED for resource: /ci.Dockerfile.USER
+	File: /ci.Dockerfile:17-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-a-user-for-the-container-has-been-created
+
+Check: CKV_DOCKER_5: "Ensure update instructions are not use alone in the Dockerfile"
+	PASSED for resource: /testhadolinttest.Dockerfile.
+	File: /testhadolinttest.Dockerfile:1-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-update-instructions-are-not-used-alone-in-the-dockerfile
+
+Check: CKV_DOCKER_7: "Ensure the base image uses a non latest version tag"
+	PASSED for resource: /testhadolinttest.Dockerfile.
+	File: /testhadolinttest.Dockerfile:1-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-base-image-uses-a-non-latest-version-tag
+
+Check: CKV_DOCKER_8: "Ensure the last USER is not root"
+	PASSED for resource: /testhadolinttest.Dockerfile.USER
+	File: /testhadolinttest.Dockerfile:16-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-the-last-user-is-not-root
+
+Check: CKV_DOCKER_1: "Ensure port 22 is not exposed"
+	PASSED for resource: /testhadolinttest.Dockerfile.
+	File: /testhadolinttest.Dockerfile:1-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-port-22-is-not-exposed
+
+Check: CKV_DOCKER_3: "Ensure that a user for the container has been created"
+	PASSED for resource: /testhadolinttest.Dockerfile.USER
+	File: /testhadolinttest.Dockerfile:16-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-a-user-for-the-container-has-been-created
+
+Check: CKV_DOCKER_2: "Ensure that HEALTHCHECK instructions have been added to container images"
+	FAILED for resource: /Dockerfile.
+	File: /Dockerfile:1-15
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-healthcheck-instructions-have-been-added-to-container-images
+
+		1  | # The below Docker code creates an executable jar and then creates an Docker Image out of it.
+		2  | FROM gradle:7.0.2-jdk8 AS build
+		3  | COPY --chown=gradle:gradle . /home/gradle/src
+		4  | WORKDIR /home/gradle/src
+		5  | RUN gradle build -x test -x checkstyleTest --no-daemon
+		6  | 
+		7  | FROM openjdk:8-jre-alpine
+		8  | RUN apk add --no-cache --upgrade libtasn1=4.14-r0 sqlite-libs=3.28.0-r3 musl-utils=1.1.20-r6 libjpeg-turbo=1.5.3-r6 \
+		9  | openjdk8-jre=8.275.01-r0 openjdk8-jre-base=8.275.01-r0 openjdk8-jre-lib=8.275.01-r0 libx11=1.6.12-r0 freetype=2.9.1-r3
+		10 | EXPOSE 8080
+		11 | RUN mkdir /app
+		12 | COPY --from=build /home/gradle/src/build/libs/*.jar /app/companieshouse-*.jar
+		13 | ENTRYPOINT ["java","-jar","companieshouse-*.jar"]
+		14 | RUN groupadd --gid 10001 rungroup && useradd --uid 10001 --gid 10001 runuser
+		15 | USER runuser:rungroup
+
+Check: CKV_DOCKER_2: "Ensure that HEALTHCHECK instructions have been added to container images"
+	FAILED for resource: /ci.Dockerfile.
+	File: /ci.Dockerfile:1-17
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-healthcheck-instructions-have-been-added-to-container-images
+
+		1  | # Docker file if we just want to create a Docker Images using the already built jar file
+		2  | FROM openjdk:8-jre-alpine
+		3  | 
+		4  | WORKDIR /opt
+		5  | 
+		6  | EXPOSE 8080
+		7  | 
+		8  | RUN apk add --no-cache --upgrade libtasn1=4.14-r0 sqlite-libs=3.28.0-r3 musl-utils=1.1.20-r6 libjpeg-turbo=1.5.3-r6 \
+		9  | openjdk8-jre=8.275.01-r0 openjdk8-jre-base=8.275.01-r0 openjdk8-jre-lib=8.275.01-r0 libx11=1.6.12-r0 freetype=2.9.1-r3
+		10 | 
+		11 | ARG APPJAR=build/libs/companieshouse-*.jar
+		12 | 
+		13 | COPY ${APPJAR} companieshouse-*.jar
+		14 | 
+		15 | ENTRYPOINT ["java","-jar","companieshouse-*.jar"]
+		16 | RUN groupadd --gid 10001 rungroup && useradd --uid 10001 --gid 10001 runuser
+		17 | USER runuser:rungroup
+
+Check: CKV_DOCKER_2: "Ensure that HEALTHCHECK instructions have been added to container images"
+	FAILED for resource: /testhadolinttest.Dockerfile.
+	File: /testhadolinttest.Dockerfile:1-16
+	Guide: https://docs.bridgecrew.io/docs/ensure-that-healthcheck-instructions-have-been-added-to-container-images
+
+		1  | # The below Docker code creates an executable jar and then creates an Docker Image out of it.
+		2  | FROM gradle:7.0.2-jdk8 AS build
+		3  | COPY --chown=gradle:gradle . /home/gradle/src
+		4  | WORKDIR /home/gradle/src
+		5  | RUN gradle build -x test -x checkstyleTest --no-daemon
+		6  | 
+		7  | FROM openjdk:8-jre-alpine
+		8  | RUN apk update
+		9  | RUN apk add --upgrade libtasn sqlite-lib musl-util libjpeg-turb  \
+		10 | openjdk8-jre openjdk8-jre-base openjdk8-jre-lib libx11 freetype
+		11 | EXPOSE 8080
+		12 | RUN mkdir /app
+		13 | COPY --from=build /home/gradle/src/build/libs/*.jar /app/companieshouse-*.jar
+		14 | ENTRYPOINT exec java $JAVA_OPTS -jar /app/companieshouse-*.jar
+		15 | RUN groupadd --gid 10001 rungroup && useradd --uid 10001 --gid 10001 runuser
+		16 | USER runuser:rungroup
+
+More details: https://www.bridgecrew.cloud/projects?repository=none92_cli_repo/spring-boot-microservice-best-practices&branch=bc-eb28003_master&runId=latest

@@ -1,0 +1,1 @@
+artillery run --environment functional test-config.yaml

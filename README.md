@@ -128,8 +128,9 @@ A feature is not considered as developed until all the Unit Tests (TDD) and feat
 ### 1. Testing
 
 #### 1.1 Unit Test
-
-We are using JUnit 5 for running our unit test cases.
+ 
+<details>
+  We are using JUnit 5 for running our unit test cases.
 
 ```bash
 ./gradlew test
@@ -142,6 +143,24 @@ build/reports/tests/test/index.html
 ```
 
 ![](doc-resources/images/unit-test-report.png)
+  <summary>
+    We are using JUnit 5 for running our unit test cases.
+  </summary>
+</details>
+
+<!-- We are using JUnit 5 for running our unit test cases.
+
+```bash
+./gradlew test
+```
+
+Once executed a report as below will be generated at local path
+
+```bash
+build/reports/tests/test/index.html
+```
+
+![](doc-resources/images/unit-test-report.png) -->
 
 #### 1.2 Cucumber End to End Test
 

@@ -1,0 +1,64 @@
+config:
+  target: "{{ $processEnvironment.MY_HOSTNAME }}"
+  plugins:
+    expect: {}
+  environments:
+    #
+    # This is our load testing profile, where we create a lot of virtual users.
+    # Note that we don't load the plugin here, so that we don't see the output
+    # from the plugin.
+    #
+    load:
+      phases:
+        - duration: 5
+          arrivalRate: 10
+          name: Sustained load
+    #
+    # This is our functional testing profile, with a single virtual user, and
+    # the plugin enabled.
+    #
+    functional:
+      phases:
+        - duration: 1
+          arrivalCount: 1
+    plugins:
+      expect: {}
+
+scenarios:
+  - name: "Check the companieshouse API"
+    flow:
+      - get:
+          name: "healthcheck"
+          url: "/companieshouse/actuator/health"
+          headers:
+            Accept: "*/*"
+            Accept-Encoding: gzip, deflate, br
+          capture:
+            - json: "$.status"
+              as: "status"
+            - json: "$.groups"
+              as: "groups"
+          expect:
+            - statusCode: 200
+            - contentType: "application/vnd.spring-boot.actuator.v3+json"
+            # - hasProperty: status
+            # - hasProperty: groups
+            # - equals:
+            #   - "UP"
+            #   - "{{status}}"
+      - get:
+          name: "CompaniesSearch"
+          url: "/companieshouse/search/11111111"
+          headers:
+            Accept: "*/*"
+          capture:
+            - json: "$.[0].companyStatus"
+              as: "companyStatus"
+          # expect:
+          #   - statusCode: 200
+          #   - contentType: json
+          #   # - hasProperty: companyStatus
+          #   - equals:
+          #     - "active"
+          #     - "{{companyStatus}}"
+      - log: "Company House is done"
